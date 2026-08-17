@@ -29,7 +29,7 @@ flatter it.) Second, **do the darlings persist or mean-revert** — does a regim
 winning into the next administration, or is buying last era's darlings a reversion trap? The partisan
 framing is the hypothesis; the README name (`beltway`) keeps the repo neutral.
 
-## Research plan (Path A — not yet built)
+## Research plan (Path A)
 
 - **Define the eras and their darlings, ex-ante-style.** For each Democratic term, assemble the sector
   / thematic baskets that policy actually favored (documented at the time, to limit look-ahead).
@@ -41,11 +41,34 @@ framing is the hypothesis; the README name (`beltway`) keeps the repo neutral.
 - **Confound audit.** Explicitly document the confounds (Fed cycle, valuations at inauguration,
   small sample of terms) so the result is not oversold. A null here is a perfectly good outcome.
 
-Nothing above is implemented or validated. This is the map, not the territory.
+## Research — first pass done
+
+Full detail in [`research/README.md`](research/README.md). The scorecard (Alpaca SIP; **2016+ only —
+Clinton & most of Obama are out of sample**):
+
+| # | Question | Verdict |
+|---|----------|---------|
+| 1 | Are the party baskets even good? | ⚠️ high-beta sector bets — DEM +0.50 Sharpe / REP +0.65 / **SPY +0.88**; clean energy −67%, solar −79% DD |
+| 2 | Is "same-party regime" informative? | ❌❌ **not null — inverted**: aligned basket loses under its own party 4/4; DEM darlings −14.8%/yr under D, +39.8%/yr under R |
+| 3 | Policy, or just macro? | ❌ macro dominates — under Biden, clean energy −21%/yr while fossil +26%/yr (the opposite of the narrative) |
+| 4 | Do the darlings persist or revert? | ❌ reversion trap — rank persistence Trump-I→Biden **−0.95**; TAN went +61% winner → −26% dead-last |
+
+**The synthesis:** the thesis doesn't just fail — in the testable window it runs **backwards**. If
+"Democratic policy lifts the Democratic darlings" held, clean energy would shine under Biden and fossil
+under Trump; instead the party-aligned basket **lost in all four administrations**, and pooled the
+Democratic darlings returned **−14.8%/yr under Democrats vs +39.8%/yr under Republicans**. The reason
+is macro, not politics: the long-duration clean-energy complex was inflated by 2020 ZIRP (late Trump)
+and crushed by the 2022 rate shock (Biden), while the oil shock sent fossil energy soaring *under the
+Democrat*. And the darlings **revert** (Trump-I→Biden rank persistence −0.95) — buying last regime's
+winners is precisely wrong. Caveats keep it modest (only ~3–4 terms, marquee eras pre-2016, a
+rate-regime artifact more than a political law), but within everything the data can see, **party regime
+is macro in a partisan costume, not a tradable signal.** Joins the honest shelf with
+[Bubble](https://github.com/blaquebaux/bubble) and [Burry](https://github.com/blaquebaux/burry).
 
 ## Status
-**Concept.** Thesis and research plan only — no sketches run, no driver, nothing validated to the
-spine's bar. A politically-flavored hypothesis, to be tested skeptically like everything else here.
+**Research: first pass complete — an emphatic null (indeed inverted)** (`research/`). Party regime does
+not drive the darlings; macro does, and the darlings revert. Marquee eras out of sample. No keeper, no
+live driver; nothing validated to the spine's bar.
 
 ## About Blaque Baux
 
@@ -67,7 +90,7 @@ base/blueprint and holds the [full family roster](https://github.com/blaquebaux/
 ## Layout
 ```
 engine/     the Blaque Baux platform (git submodule -> blaquebaux/base)
-research/   the research plan (Path A) — sketches land here once run
+research/   four Path-A sketches (baskets, regime, controls, persistence) + scorecard
 live/       governed live drivers (once a sleeve graduates to paper A/B)
 ```
 
